@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kependudukan — SIP Karangdowo</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="kependudukan.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div class="header-main">
+    <div class="header-left">
+        <img src="assets/L.Ikon.png" class="header-icon" alt="Lokasi"
+             onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%23f1c40f%22><path d=%22M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z%22/></svg>'">
+        <div>
+            <h1>Sistem Informasi Pertanahan</h1>
+            <div class="header-subtitle">Desa Munggung · Kecamatan Karangdowo</div>
+        </div>
+    </div>
+    <nav>
+        <a href="beranda.html">Beranda</a>
+        <a href="bantuan.html">Bantuan</a>
+    </nav>
+    <div class="header-right">
+        <div id="live-clock">--:--:--</div>
+        <div class="user-pill" id="user-pill" onclick="logout()">
+            <span id="user-icon">👤</span>
+            <span id="user-name">Memuat...</span>
+            <span style="opacity:0.6;margin-left:2px;">⏏</span>
+        </div>
+    </div>
+</div>
+
+<div class="page-wrap">
+
+    <!-- HERO -->
+    <div class="page-hero">
+        <h1>👥 Data Kependudukan Kecamatan Karangdowo</h1>
+        <p>Data kependudukan Kecamatan Karangdowo, Kabupaten Klaten.</p>
+        <div class="lokasi-badge">
+            📍 Kecamatan Karangdowo, Kabupaten Klaten, Jawa Tengah
+        </div>
+        <div style="margin-top:12px;font-family:'Roboto Mono',monospace;font-size:12px;color:rgba(255,255,255,0.6);">
+            Sumber: Dinas Kependudukan dan Pencatatan Sipil Kabupaten Klaten · Data: 2025
+        </div>
+    </div>
+
+    <!-- STAT CARDS -->
+    <div class="stat-grid">
+        <div class="stat-card">
+            <div class="stat-icon">👨‍👩‍👧‍👦</div>
+            <div class="stat-val">43.284</div>
+            <div class="stat-lbl">Total Penduduk</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">🏘️</div>
+            <div class="stat-val">19</div>
+            <div class="stat-lbl">Jumlah Desa</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">👨‍👩‍👦</div>
+            <div class="stat-val">12.680</div>
+            <div class="stat-lbl">Jumlah KK</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon">📐</div>
+            <div class="stat-val">1.423</div>
+            <div class="stat-lbl">Kepadatan (jiwa/km²)</div>
+        </div>
+    </div>
+
+    <!-- GRAFIK PENDUDUK PER DESA + PIE JENIS KELAMIN -->
+    <div class="two-col">
+        <div class="card">
+            <div class="card-title">📊 Penduduk per Desa</div>
+            <canvas id="chartDesa"></canvas>
+        </div>
+        <div class="card">
+            <div class="card-title">⚖️ Komposisi Jenis Kelamin</div>
+            <canvas id="chartGender"></canvas>
+            <div class="pie-legend">
+                <div class="pie-item"><div class="pie-swatch" style="background:#1a4d6e;"></div><span>Laki-laki &nbsp;— 21.580 jiwa (49,9%)</span></div>
+                <div class="pie-item"><div class="pie-swatch" style="background:#f1c40f;"></div><span>Perempuan — 21.704 jiwa (50,1%)</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DISTRIBUSI USIA (full width) -->
+    <div class="card" style="margin-bottom:20px;">
+        <div class="card-title">🎂 Distribusi Kelompok Umur</div>
+        <canvas id="chartUsia"></canvas>
+    </div>
+
+    <!-- TABEL DETAIL PER DESA -->
+    <div class="card" style="margin-bottom:20px;">
+        <div class="card-title">📋 Tabel Penduduk per Desa</div>
+        <div style="overflow-x:auto;">
+        <table>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Desa</th>
+                    <th>Persentase Penduduk (%)</th>
+                    <th>Kepadatan Penduduk (jiwa/km²)</th>
+                    <th>Rasio Jenis Kelamin</th>
+                </tr>
+            </thead>
+            <tbody id="tabel-desa"></tbody>
+        </table>
+        </div>
+    </div>
+
+    <!-- TREN PERTUMBUHAN (full width) -->
+    <div class="card" style="margin-bottom:20px;">
+        <div class="card-title">📈 Tren Pertumbuhan Penduduk</div>
+        <canvas id="chartTren"></canvas>
+    </div>
+
+</div>
+
+
+<footer class="page-footer">
+    Sistem Informasi Pertanahan · <span>Desa Munggung</span> · Kecamatan Karangdowo · Kabupaten Klaten
+</footer>
+
+<script src="kependudukan.js"></script>
+</body>
+</html>

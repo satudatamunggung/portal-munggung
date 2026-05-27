@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sejarah Desa Munggung - SIP Karangdowo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sejarah.css">
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="site-header">
+    <div class="brand">
+        <img src="assets/L.Ikon.png" alt="Icon">
+        <div class="brand-text">
+            <h1>Sistem Informasi Pertanahan</h1>
+            <p>Desa Munggung · Kecamatan Karangdowo</p>
+        </div>
+    </div>
+
+    <nav class="nav-menu">
+        <a href="beranda.html">Beranda</a>
+        <a href="kontak.html">Kontak</a>
+    </nav>
+
+    <div class="live-clock">
+        <div class="clock-inner">
+            <span id="hari"></span>
+            <span id="tanggal"></span>
+            <span class="label"> Pukul </span>
+            <span id="jam"></span>
+        </div>
+    </div>
+
+    <div class="user-pill" id="user-pill" onclick="logout()">
+        <span id="user-icon">👤</span>
+        <span id="user-name">Memuat...</span>
+        <span style="opacity:0.6;margin-left:2px;">⏏</span>
+    </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div id="hero-particles-sejarah"></div>
+    <div class="hero-divider-top"></div>
+    <div class="hero-content">
+        <div class="hero-eyebrow">WARISAN LELUHUR · DESA MUNGGUNG</div>
+        <h1>Sejarah &<br><em>Asal Usul</em></h1>
+        <p class="hero-sub">Menelusuri jejak perjalanan Desa Munggung dari masa ke masa</p>
+        <div class="hero-scroll">GULIR KE BAWAH</div>
+    </div>
+</section>
+
+<!-- ═══ ASAL USUL ═══ -->
+<div class="wrap-asal">
+    <div class="section" style="padding-top:0;padding-bottom:0;">
+        <div class="section-label">ASAL USUL NAMA</div>
+        <h2 class="section-title">Dari Mana Nama<br><em>"Munggung"</em> Berasal?</h2>
+        <p class="section-lead">
+            Nama sebuah desa menyimpan cerita panjang yang terpatri dalam ingatan kolektif warganya.
+            Desa Munggung memiliki akar historis yang kaya dan penuh makna.
+        </p>
+        <div class="asal-grid reveal">
+            <div class="asal-img">
+                <img src="assets/L.Sawah.png" alt="Sawah Desa">
+                <div class="asal-img-caption">Hamparan sawah Desa Munggung yang menjadi identitas wilayah agraris ini</div>
+            </div>
+            <div class="asal-text">
+                <div class="kw">ETIMOLOGI · SEJARAH LISAN</div>
+                <h3>Munggung: Tanah yang Lebih Tinggi</h3>
+                <p>
+                    Desa Munggung merupakan salah satu desa di Kecamatan Karangdowo, Kabupaten Klaten.
+                    Nama "Munggung" dalam bahasa Jawa sering dimaknai sebagai <strong>tempat yang lebih tinggi
+                    atau gundukan tanah</strong>, yang menggambarkan kondisi wilayah desa yang berada sedikit
+                    lebih tinggi dibanding area sekitarnya.
+                </p>
+                <p>
+                    Seiring perkembangan waktu, wilayah ini mulai dihuni oleh kelompok masyarakat agraris yang
+                    membuka lahan pertanian dan membentuk komunitas desa. Aktivitas pertanian dan gotong royong
+                    kemudian menjadi dasar kehidupan sosial masyarakat Munggung hingga berkembang menjadi desa seperti saat ini.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="ornament">✦ ✦ ✦</div>
+
+<!-- ═══ TIMELINE ═══ -->
+<div class="wrap-timeline">
+    <div class="section" style="padding-top:0;padding-bottom:0;">
+        <div class="section-label">LINIMASA SEJARAH</div>
+        <h2 class="section-title">Perjalanan Panjang<br><em>Desa Munggung</em></h2>
+
+        <div class="timeline-wrap" style="margin-top:60px; position:relative;">
+            <div class="timeline-line"></div>
+
+            <!-- Item 1 -->
+            <div class="tl-item reveal">
+                <div class="tl-card">
+                    <div class="tl-card-img">
+                        <img src="assets/L.PembukaanLahan.png" alt="Pembukaan Lahan">
+                    </div>
+                    <div class="tl-card-body">
+                        <span class="tl-year">± Abad 17</span>
+                        <h4>Pembukaan Lahan Pertama</h4>
+                        <p>Pada masa awal pembentukan permukiman, wilayah yang kini dikenal sebagai Desa Munggung mulai dibuka dan dikelola menjadi lahan pertanian oleh kelompok masyarakat pendatang yang menetap di kawasan tersebut.</p>
+                    </div>
+                </div>
+                <div class="tl-center">
+                    <div class="tl-dot">1700</div>
+                </div>
+                <div class="tl-empty"></div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="tl-item reveal">
+                <div class="tl-empty"></div>
+                <div class="tl-center">
+                    <div class="tl-dot">1800</div>
+                </div>
+                <div class="tl-card">
+                    <div class="tl-card-img">
+                        <img src="assets/L.Kolonial.png" alt="Kolonial">
+                    </div>
+                    <div class="tl-card-body">
+                        <span class="tl-year">Awal 1800-an</span>
+                        <h4>Era Kolonial & Sistem Tanam Paksa</h4>
+                        <p>Munggung menjadi salah satu desa penghasil pangan di bawah tekanan sistem tanam paksa Belanda. Sawah-sawah digarap dengan penuh perjuangan.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="tl-item reveal">
+                <div class="tl-card">
+                    <div class="tl-card-img">
+                        <img src="assets/L.1945.png" alt="Kemerdekaan">
+                    </div>
+                    <div class="tl-card-body">
+                        <span class="tl-year">1945</span>
+                        <h4>Meraih Kemerdekaan</h4>
+                        <p>Warga Munggung turut berpartisipasi dalam perjuangan kemerdekaan Indonesia. Beberapa putra desa tercatat sebagai pejuang di garis depan.</p>
+                    </div>
+                </div>
+                <div class="tl-center">
+                    <div class="tl-dot">1945</div>
+                </div>
+                <div class="tl-empty"></div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="tl-item reveal">
+                <div class="tl-empty"></div>
+                <div class="tl-center">
+                    <div class="tl-dot">1970</div>
+                </div>
+                <div class="tl-card">
+                    <div class="tl-card-img">
+                        <img src="assets/L.1970.png" alt="1970">
+                    </div>
+                    <div class="tl-card-body">
+                        <span class="tl-year">1970-an</span>
+                        <h4>Era Pembangunan & Modernisasi</h4>
+                        <p>Pembangunan infrastruktur desa dimulai. Jaringan irigasi teknis dibangun, meningkatkan produktivitas pertanian dan kesejahteraan warga.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="tl-item reveal">
+                <div class="tl-card">
+                    <div class="tl-card-img">
+                        <img src="assets/L.2020.jfif" alt="Digital">
+                    </div>
+                    <div class="tl-card-body">
+                        <span class="tl-year">2020-an</span>
+                        <h4>Era Digital & Sistem Informasi</h4>
+                        <p>Desa Munggung memasuki era digitalisasi dengan pengembangan Sistem Informasi Pertanahan (SIP) untuk mengelola data bidang tanah secara modern.</p>
+                    </div>
+                </div>
+                <div class="tl-center">
+                    <div class="tl-dot">NOW</div>
+                </div>
+                <div class="tl-empty"></div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="ornament">✦ ✦ ✦</div>
+
+<!-- ═══ QUOTE ═══ -->
+<div class="wrap-quote">
+    <div class="section">
+        <div class="quote-block reveal">
+            <blockquote>
+                "Desa yang kuat adalah desa yang mengenal sejarahnya sendiri,
+                menghargai tanah leluhurnya, dan menatap masa depan dengan
+                penuh keyakinan."
+            </blockquote>
+            <cite>— PEPATAH JAWA · KEARIFAN LOKAL</cite>
+        </div>
+    </div>
+</div>
+
+<!-- ═══ TRADISI & BUDAYA ═══ -->
+<div class="wrap-tradisi">
+    <div class="section" style="padding-top:0;padding-bottom:0;">
+        <div class="section-label">TRADISI & BUDAYA</div>
+        <h2 class="section-title">Warisan <em>Budaya</em><br>yang Terus Hidup</h2>
+        <p class="section-lead">
+            Desa Munggung menyimpan kekayaan tradisi dan budaya lokal yang masih
+            dilestarikan hingga kini oleh generasi penerus.
+        </p>
+        <div class="tradisi-grid reveal">
+            <div class="tradisi-card">
+                <img src="assets/L.Nyadran.png" alt="Nyadran">
+                <div class="tradisi-overlay">
+                    <div class="tradisi-tag">TRADISI TAHUNAN</div>
+                    <h4>Nyadran</h4>
+                    <p>Tradisi ziarah dan bersih desa yang dilakukan setiap menjelang bulan Ramadan sebagai bentuk penghormatan kepada leluhur.</p>
+                </div>
+            </div>
+            <div class="tradisi-card">
+                <img src="assets/L.MertiDesa.png" alt="Merti">
+                <div class="tradisi-overlay">
+                    <div class="tradisi-tag">SYUKURAN PANEN</div>
+                    <h4>Merti Desa</h4>
+                    <p>Upacara adat bersih desa yang digelar pasca panen sebagai ungkapan syukur atas hasil bumi yang melimpah.</p>
+                </div>
+            </div>
+            <div class="tradisi-card">
+                <img src="assets/L.Gotong.png" alt="Gotong">
+                <div class="tradisi-overlay">
+                    <div class="tradisi-tag">NILAI SOSIAL</div>
+                    <h4>Gotong Royong</h4>
+                    <p>Semangat kebersamaan dalam membangun dan merawat desa yang menjadi fondasi kuat masyarakat Munggung sejak dahulu kala.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="page-footer">
+    Sistem Informasi Pertanahan · <span>Desa Munggung</span> · Kecamatan Karangdowo · Kabupaten Klaten
+</footer>
+
+<script src="sejarah.js"></script>
+</body>
+</html>

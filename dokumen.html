@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dokumen — SIP Desa Munggung</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="dokumen.css">
+<!-- ✅ Auth guard: redirect ke login jika belum login -->
+<script src="auth-guard.js"></script>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<div class="header-main">
+    <div class="header-left">
+        <img src="assets/L.Undip.png" class="logo-img" alt="Universitas">
+        <img src="assets/L.Klaten.png" class="logo-img" alt="Kabupaten">
+        <div class="header-title">
+            <h1>Sistem Informasi Pertanahan</h1>
+            <div class="header-subtitle">Desa Munggung · Kecamatan Karangdowo</div>
+        </div>
+    </div>
+    <nav>
+        <a href="beranda.html">Beranda</a>
+        <div class="dropdown">
+            <a href="#">Profil ▾</a>
+            <div class="dropdown-content">
+                <a href="sejarah.html">Sejarah</a>
+                <a href="geografis.html">Geografis</a>
+                <a href="kependudukan.html">Kependudukan</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Dokumen ▾</a>
+            <div class="dropdown-content">
+                <a href="#" onclick="downloadDokumen('rtrw')">RTRW Kab. Klaten</a>
+                <a href="#" onclick="downloadDokumen('rpjmdes')">RPJMDes Munggung</a>
+                <a href="#" onclick="downloadDokumen('lkppd')">LKPPD Munggung</a>
+            </div>
+        </div>
+        <a href="kontak.html">Kontak</a>
+    </nav>
+    <div class="header-right">
+        <div id="live-clock">--:--:--</div>
+        <div class="user-pill" id="user-pill" onclick="doLogout()">
+            <span id="user-icon">👤</span>
+            <span id="user-name">Memuat...</span>
+            <span style="opacity:0.6;margin-left:2px;">⏏</span>
+        </div>
+    </div>
+</div>
+
+<!-- ═══ CONTENT ═══ -->
+<div class="page-content">
+
+    <div class="section-label">Dokumen Resmi Desa</div>
+
+    <div class="notice-box" id="notice-box">
+        <div class="notice-icon">⚠️</div>
+        <div id="notice-msg"></div>
+    </div>
+
+    <div class="doc-grid">
+
+        <!-- RTRW -->
+        <a href="assets/dokumen/RTRW Klaten 2021-2041.pdf" download class="doc-card">
+            <div class="doc-icon">📋</div>
+            <div class="doc-title">RTRW Kab. Klaten</div>
+            <div class="doc-desc">
+                Rencana Tata Ruang Wilayah Kabupaten Klaten sebagai acuan penataan ruang dan penggunaan lahan.
+            </div>
+            <span class="doc-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                Unduh PDF
+            </span>
+        </a>
+
+        <!-- RPJMDes — ✅ DIPERBAIKI: nama file disesuaikan dengan GitHub -->
+        <a href="assets/dokumen/RPJMDes Munggung.pdf" download class="doc-card">
+            <div class="doc-icon">📑</div>
+            <div class="doc-title">RPJMDes Munggung</div>
+            <div class="doc-desc">
+                Rencana Pembangunan Jangka Menengah Desa Munggung sebagai panduan pembangunan desa.
+            </div>
+            <span class="doc-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                Unduh PDF
+            </span>
+        </a>
+
+        <!-- LKPPD -->
+        <a href="assets/dokumen/LKPPD Munggung.pdf" download class="doc-card">
+            <div class="doc-icon">📊</div>
+            <div class="doc-title">LKPPD Munggung</div>
+            <div class="doc-desc">
+                Laporan Keterangan Penyelenggaraan Pemerintahan Desa Munggung sebagai bentuk akuntabilitas.
+            </div>
+            <span class="doc-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                Unduh PDF
+            </span>
+        </a>
+
+    </div>
+</div>
+
+<script>
+// ✅ Nama file disesuaikan persis dengan nama di GitHub (case-sensitive!)
+const dokumen = {
+    rtrw: {
+        file: 'assets/dokumen/RTRW Klaten 2021-2041.pdf',
+        name: 'RTRW_Kabupaten_Klaten.pdf'
+    },
+    rpjmdes: {
+        file: 'assets/dokumen/RPJMDes Munggung.pdf',   // ← DIPERBAIKI (MUNGGUNG huruf besar)
+        name: 'RPJMDes_Munggung.pdf'
+    },
+    lkppd: {
+        file: 'assets/dokumen/LKPPD Munggung.pdf',
+        name: 'LKPPD_Desa_Munggung.pdf'
+    }
+};
+
+function downloadDokumen(key) {
+    if (!dokumen[key]) { alert('Dokumen tidak ditemukan'); return; }
+    const link = document.createElement('a');
+    link.href = dokumen[key].file;
+    link.download = dokumen[key].name;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+</script>
+<script src="dokumen.js"></script>
+</body>
+</html>

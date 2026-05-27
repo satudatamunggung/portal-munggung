@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontak — SIP Desa Munggung</title>
+
+<!-- FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+
+<!-- CSS -->
+<link rel="stylesheet" href="kontak.css">
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<div class="header-main">
+    <div class="header-left">
+        <img src="assets/L.Ikon.png" class="header-icon" alt="Lokasi"
+             onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%23f1c40f%22><path d=%22M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z%22/></svg>'">
+        <div>
+            <h1>Sistem Informasi Pertanahan</h1>
+            <div class="header-subtitle">Desa Munggung · Kecamatan Karangdowo</div>
+        </div>
+    </div>
+    <nav>
+        <a href="beranda.html">Beranda</a>
+        <a href="kontak.html">Kontak</a>
+    </nav>
+    <div class="header-right">
+        <div id="live-clock">--:--:--</div>
+        <div class="user-pill" id="user-pill" onclick="logout()">
+            <span id="user-icon">👤</span>
+            <span id="user-name">Memuat...</span>
+            <span style="opacity:0.6;margin-left:2px;">⏏</span>
+        </div>
+    </div>
+</div>
+
+
+<!-- ═══ PAGE HERO ═══ -->
+<div class="page-hero">
+    <h1>📬 Kontak & Informasi</h1>
+    <p>Hubungi kami untuk informasi lebih lanjut mengenai Desa Munggung, Kecamatan Karangdowo.</p>
+</div>
+
+<!-- ═══ CONTENT ═══ -->
+<div class="page-content">
+
+    <div class="section-label">Informasi &amp; Kontak Resmi</div>
+
+    <div class="cards-grid">
+
+        <!-- CARD 1: Kantor Pemerintah -->
+        <div class="info-card">
+            <div class="card-section-title">Kantor Pemerintah</div>
+
+            <div class="info-row">
+                <div class="info-icon">🏛️</div>
+                <div>
+                    <div class="info-text-label">Alamat</div>
+                    <div class="info-text-value">
+                        Dk. Pencil, Ds. Munggung, Kec. Karangdowo, Kab. Klaten, Jawa Tengah 57464<br>
+                    </div>
+                </div>
+            </div>
+
+            <a href="https://www.google.com/maps/search/Kantor+Desa+Munggung+Karangdowo+Klaten" target="_blank" class="btn-action btn-outline" style="margin-top:18px;">
+                🗺️ Buka di Google Maps
+            </a>
+        </div>
+
+        <!-- CARD 2: Jam Pelayanan -->
+        <div class="info-card">
+            <div class="card-section-title">Jam Pelayanan Publik</div>
+
+            <div class="jam-row">
+                <div class="jam-icon">📅</div>
+                <div>
+                    <div class="jam-label">Hari Kerja</div>
+                    <div class="jam-value">Senin s/d Jumat</div>
+                </div>
+            </div>
+
+            <div class="jam-row">
+                <div class="jam-icon">🕗</div>
+                <div>
+                    <div class="jam-label">Jam Operasional</div>
+                    <div class="jam-value">08:00 WIB – 15:00 WIB</div>
+                </div>
+            </div>
+
+            <div class="alert-warning">
+                <div class="alert-warning-icon">⚠️</div>
+                <div>Hari Sabtu, Minggu, dan hari libur nasional pelayanan administrasi tatap muka tutup.</div>
+            </div>
+        </div>
+
+        <!-- CARD 3: Media Sosial Kelompok B3 -->
+        <div class="info-card">
+            <div class="card-section-title">Media Sosial Kelompok B3</div>
+
+            <div class="sosmed-list">
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/plankdowo" target="_blank" class="sosmed-item">
+                    <div class="sosmed-logo sosmed-logo--instagram">
+                        <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="sosmed-name">Instagram Kelompok B3</div>
+                        <div class="sosmed-handle">@plankdowo</div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<footer class="page-footer">
+    Sistem Informasi Pertanahan · <span>Desa Munggung</span> · Kecamatan Karangdowo · Kabupaten Klaten
+</footer>
+
+<!-- JS -->
+<script src="kontak.js"></script>
+</body>
+</html>
