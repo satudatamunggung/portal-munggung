@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <link rel="icon" type="image/png" href="assets/web3.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geografis Desa Munggung - SIP Karangdowo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="geografis.css">
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="site-header">
+    <div class="brand">
+        <img src="assets/L.Ikon.png" alt="Icon">
+        <div class="brand-text">
+            <h1>Sistem Informasi Pertanahan</h1>
+            <p>Desa Munggung · Kecamatan Karangdowo</p>
+        </div>
+    </div>
+
+    <nav class="nav-menu">
+        <a href="beranda.html">Beranda</a>
+        <a href="kontak.html">Kontak</a>
+    </nav>
+
+    <div class="live-clock">
+        <div class="clock-inner">
+            <span id="hari"></span> <span id="tanggal"></span> <span>Pukul</span> <span id="jam"></span>
+        </div>
+    </div>
+    <div class="user-pill" id="user-pill" onclick="logout()">
+        <span id="user-icon">👤</span>
+        <span id="user-name">Memuat...</span>
+        <span style="opacity:0.6;margin-left:2px;">⏏</span>
+    </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div id="hero-particles-geo"></div>
+    <div class="hero-stripe"></div>
+    <div class="hero-content">
+        <div class="hero-chip">PROFIL GEOGRAFIS · DESA MUNGGUNG</div>
+        <h1>Geo<span>grafis</span><br>Wilayah</h1>
+        <p class="hero-desc">
+            Mengenal lebih dalam kondisi fisik, topografi, iklim, dan tata guna lahan
+            Desa Munggung, Kecamatan Karangdowo, Kabupaten Klaten.
+        </p>
+    </div>
+</section>
+
+<!-- ═══ STAT RIBBON ═══ -->
+<div class="stat-ribbon">
+    <div class="stat-ribbon-inner">
+        <div class="stat-item">
+            <span class="stat-icon">🌾</span>
+            <div class="stat-val">±142<span class="stat-unit">Ha</span></div>
+            <div class="stat-lbl">Luas Wilayah</div>
+        </div>
+        <div class="stat-item">
+            <span class="stat-icon">📐</span>
+            <div class="stat-val">82<span class="stat-unit">mdpl</span></div>
+            <div class="stat-lbl">Ketinggian</div>
+        </div>
+        <div class="stat-item">
+            <span class="stat-icon">🌧️</span>
+            <div class="stat-val">2.200<span class="stat-unit">mm/th</span></div>
+            <div class="stat-lbl">Curah Hujan</div>
+        </div>
+        <div class="stat-item">
+            <span class="stat-icon">🌡️</span>
+            <div class="stat-val">27<span class="stat-unit">°C</span></div>
+            <div class="stat-lbl">Suhu Rata-rata</div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══ LOKASI STRATEGIS ═══ -->
+<div class="section">
+    <div class="pill-label">📍 LETAK GEOGRAFIS</div>
+    <h2 class="section-title">Posisi & <span>Lokasi</span><br>Strategis</h2>
+    <p class="section-lead">
+        Desa Munggung terletak di wilayah Kecamatan Karangdowo, Kabupaten Klaten,
+        Provinsi Jawa Tengah — sebuah dataran rendah subur yang dialiri jaringan irigasi teknis.
+    </p>
+
+    <div class="lokasi-grid reveal">
+        <div class="lokasi-map-card">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.5!2d110.7276!3d-7.7086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwNDInMjkuMCJTIDExMMKwNDMnNDkuNiJF!5e0!3m2!1sid!2sid!4v1680000000000!5m2!1sid!2sid"
+                allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div class="lokasi-map-footer">
+                <span class="map-pin">📍</span>
+                <div class="map-addr">
+                    <strong>Desa Munggung</strong>
+                    Kecamatan Karangdowo · Kabupaten Klaten · Jawa Tengah
+                </div>
+            </div>
+        </div>
+
+        <div class="lokasi-info reveal">
+            <div class="info-card">
+                <div class="info-icon ic-blue">🌐</div>
+                <div>
+                    <h4>KOORDINAT GEOGRAFIS</h4>
+                    <p>7°42'31" LS · 110°43'39" BT</p>
+                    <small>Sistem WGS 84</small>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon ic-green">🏔️</div>
+                <div>
+                    <h4>KETINGGIAN & TOPOGRAFI</h4>
+                    <p>±82 meter di atas permukaan laut</p>
+                    <small>Dataran rendah, relief datar</small>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon ic-earth">🗺️</div>
+                <div>
+                    <h4>LUAS ADMINISTRASI</h4>
+                    <p>±142 Hektare</p>
+                    <small>Terdiri dari 12 dusun, 10 RW, 27 RT</small>
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="info-icon ic-sun">🏙️</div>
+                <div>
+                    <h4>JARAK KE PUSAT KOTA</h4>
+                    <p>±14 km dari Kota Klaten</p>
+                    <small>Dapat ditempuh ±25 menit</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══ BATAS WILAYAH ═══ -->
+<div style="background:var(--sand); padding:1px 0">
+<div class="section">
+    <div class="pill-label">🧭 BATAS WILAYAH</div>
+    <h2 class="section-title">Batas <span>Administrasi</span></h2>
+    <p class="section-lead">
+        Desa Munggung berbatasan langsung dengan beberapa desa tetangga di
+        Kecamatan Karangdowo dan sekitarnya.
+    </p>
+
+    <div class="batas-card reveal">
+        <!-- KOMPAS VISUAL -->
+        <div>
+            <div class="compass">
+                <!-- Row 1 -->
+                <div class="compass-empty"></div>
+                <div class="compass-dir highlight">
+                    <div class="compass-arrow">⬆</div>
+                    <div class="compass-desa">UTARA<br>Ds. Sentono</div>
+                </div>
+                <div class="compass-empty"></div>
+
+                <!-- Row 2 -->
+                <div class="compass-dir highlight">
+                    <div class="compass-arrow">⬅</div>
+                    <div class="compass-desa">BARAT<br>Ds. Jatimulyo</div>
+                </div>
+                <div class="compass-center">MUNGGUNG</div>
+                <div class="compass-dir highlight">
+                    <div class="compass-arrow">➡</div>
+                    <div class="compass-desa">TIMUR<br>Ds. Karangdowo</div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="compass-empty"></div>
+                <div class="compass-dir highlight">
+                    <div class="compass-arrow">⬇</div>
+                    <div class="compass-desa">SELATAN<br>Ds. Ringinputih</div>
+                </div>
+                <div class="compass-empty"></div>
+            </div>
+        </div>
+
+        <!-- BATAS LIST -->
+        <ul class="batas-list">
+            <li>
+                <div class="batas-arah">U</div>
+                <div class="batas-info">
+                    <strong>Desa Karangdowo</strong>
+                    <span>Kecamatan Karangdowo, Kab. Klaten</span>
+                </div>
+            </li>
+            <li>
+                <div class="batas-arah">S</div>
+                <div class="batas-info">
+                    <strong>Desa Ringinputih</strong>
+                    <span>Kecamatan Karangdowo, Kab. Klaten</span>
+                </div>
+            </li>
+            <li>
+                <div class="batas-arah">B</div>
+                <div class="batas-info">
+                    <strong>Desa Jatimulyo</strong>
+                    <span>Kecamatan Pedan, Kab. Klaten</span>
+                </div>
+            </li>
+            <li>
+                <div class="batas-arah">T</div>
+                <div class="batas-info">
+                    <strong>Desa Sentono</strong>
+                    <span>Kecamatan Karangdowo, Kab. Klaten</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+
+<!-- ═══ TOPOGRAFI ═══ -->
+<div class="topo-section">
+    <div class="topo-inner">
+        <div class="pill-label">⛰️ TOPOGRAFI & FISIK</div>
+        <h2 class="section-title" style="color:white">Data <span style="color:var(--sun2)">Fisik</span> Wilayah</h2>
+        <p class="section-lead">
+            Karakteristik fisik Desa Munggung menunjukkan wilayah dataran rendah yang ideal
+            untuk pertanian intensif dengan dukungan irigasi teknis.
+        </p>
+
+        <div class="topo-grid reveal">
+            <div class="topo-card">
+                <div class="topo-num">82<sub>mdpl</sub></div>
+                <div class="topo-label">KETINGGIAN RATA-RATA</div>
+                <div class="topo-desc">Dataran rendah dengan relief yang relatif datar, sangat mendukung aktivitas pertanian padi sawah.</div>
+                <div class="topo-bar"><div class="topo-bar-fill" style="width:30%"></div></div>
+            </div>
+            <div class="topo-card">
+                <div class="topo-num">0–2<sub>%</sub></div>
+                <div class="topo-label">KEMIRINGAN LERENG</div>
+                <div class="topo-desc">Hampir seluruh wilayah memiliki kemiringan lereng datar (0-2%), kategori sangat landai.</div>
+                <div class="topo-bar"><div class="topo-bar-fill" style="width:10%"></div></div>
+            </div>
+            <div class="topo-card">
+                <div class="topo-num">Gleisol</div>
+                <div class="topo-label">JENIS TANAH</div>
+                <div class="topo-desc">Tanah Gleisol yang relatif subur terbentuk pada daerah dengan kondisi tanah jenuh air atau drainase buruk, umumnya ditemukan di kawasan rawa, dataran rendah, atau daerah yang sering tergenang air.</div>
+                <div class="topo-bar"><div class="topo-bar-fill" style="width:90%"></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══ IKLIM ═══ -->
+<div class="section">
+    <div class="pill-label">🌤️ IKLIM & CUACA</div>
+    <h2 class="section-title">Kondisi <span>Iklim</span><br>Setempat</h2>
+    <p class="section-lead">
+        Desa Munggung beriklim tropis dengan dua musim utama yang mempengaruhi
+        pola tanam dan kehidupan masyarakat sehari-hari.
+    </p>
+
+    <div class="iklim-grid reveal">
+        <div class="iklim-card card-hujan">
+            <div class="iklim-card-img">
+                <img src="assets/L.Penghujan.png" alt="Penghujan">
+            </div>
+            <div class="iklim-overlay"></div>
+            <div class="iklim-content">
+                <span class="iklim-badge">OKTOBER — APRIL</span>
+                <h4>🌧️ Musim Penghujan</h4>
+                <p>Curah hujan rata-rata 2.200 mm/tahun. Periode ini menjadi musim tanam utama padi sawah. Suhu berkisar 24–27°C dengan kelembaban tinggi.</p>
+            </div>
+        </div>
+        <div class="iklim-card card-kemarau">
+            <div class="iklim-card-img">
+                <img src="assets/L.Kemarau.png" alt="Kemarau">
+            </div>
+            <div class="iklim-overlay"></div>
+            <div class="iklim-content">
+                <span class="iklim-badge">MEI — SEPTEMBER</span>
+                <h4>☀️ Musim Kemarau</h4>
+                <p>Curah hujan rendah namun irigasi teknis memungkinkan penanaman palawija dan sayuran. Suhu mencapai 30–33°C di siang hari.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ═══ PENGGUNAAN LAHAN ═══ -->
+<div style="background:var(--sand); padding:1px 0">
+<div class="section">
+    <div class="pill-label">🗺️ TATA GUNA LAHAN</div>
+    <h2 class="section-title">Penggunaan <span>Lahan</span></h2>
+    <p class="section-lead">
+        Dominasi sawah irigasi teknis menjadi ciri khas Desa Munggung sebagai
+        desa agraris produktif di Kabupaten Klaten.
+    </p>
+
+    <div class="lahan-grid reveal">
+        <div class="lahan-card l-sawah">
+            <div class="lahan-img">
+                <img src="assets/L.Sawir.png" alt="Sawah Irigasi">
+            </div>
+            <div class="lahan-body">
+                <div class="lahan-pct">68%</div>
+                <div class="lahan-name">🌾 SAWAH IRIGASI</div>
+                <div class="lahan-desc">Sawah teknis dengan irigasi permanen. Panen 2–3 kali per tahun.</div>
+                <div class="lahan-bar"><div class="lahan-bar-fill" style="width:68%"></div></div>
+            </div>
+        </div>
+        <div class="lahan-card l-mukim">
+            <div class="lahan-img">
+                <img src="assets/L.Permukiman.png" alt="Rumah">
+            </div>
+            <div class="lahan-body">
+                <div class="lahan-pct">18%</div>
+                <div class="lahan-name">🏘️ PERMUKIMAN</div>
+                <div class="lahan-desc">Kawasan perumahan warga dan pekarangan yang tersebar di 4 dusun.</div>
+                <div class="lahan-bar"><div class="lahan-bar-fill" style="width:18%"></div></div>
+            </div>
+        </div>
+        <div class="lahan-card l-kebun">
+            <div class="lahan-img">
+                <img src="assets/L.Kebun.png" alt="Kebun">
+            </div>
+            <div class="lahan-body">
+                <div class="lahan-pct">9%</div>
+                <div class="lahan-name">🌳 KEBUN/TEGALAN</div>
+                <div class="lahan-desc">Lahan kebun dan tegalan untuk tanaman palawija dan sayuran.</div>
+                <div class="lahan-bar"><div class="lahan-bar-fill" style="width:9%"></div></div>
+            </div>
+        </div>
+        <div class="lahan-card l-fasum">
+            <div class="lahan-img">
+                <img src="assets/L.Jalan.png" alt="Jalan">
+            </div>
+            <div class="lahan-body">
+                <div class="lahan-pct">5%</div>
+                <div class="lahan-name">🛣️ JALAN & FASUM</div>
+                <div class="lahan-desc">Jalan desa, fasilitas umum, tempat ibadah, dan fasilitas sosial.</div>
+                <div class="lahan-bar"><div class="lahan-bar-fill" style="width:5%"></div></div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="page-footer">
+    Sistem Informasi Pertanahan · <span>Desa Munggung</span> · Kecamatan Karangdowo · Kabupaten Klaten
+</footer>
+
+<script src="geografis.js"></script>
+</body>
+</html>
