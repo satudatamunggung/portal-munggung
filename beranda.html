@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <link rel="icon" type="image/png" href="assets/web3.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - SIP Munggung</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@500&family=Barlow+Condensed:wght@400;600;700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="beranda.css">
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="header-main">
+    <div class="header-left">
+        <img src="assets/L.Undip.png" class="logo-img" alt="Universitas">
+        <img src="assets/L.Klaten.png" class="logo-img" alt="Kabupaten">
+        <div class="header-title">
+            <h1>Sistem Informasi Pertanahan</h1>
+            <div class="header-subtitle">Desa Munggung · Kecamatan Karangdowo</div>
+        </div>
+    </div>
+
+    <nav>
+        <a href="beranda.html">Beranda</a>
+
+        <div class="dropdown">
+            <a href="#">Profil ▾</a>
+            <div class="dropdown-content">
+                <a href="sejarah.html">Sejarah</a>
+                <a href="geografis.html">Geografis</a>
+                <a href="kependudukan.html">Kependudukan</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="#">Dokumen ▾</a>
+            <div class="dropdown-content">
+                <a href="assets/dokumen/RTRW Klaten 2021-2041.pdf" download>RTRW Kab. Klaten</a>
+                <a href="assets/dokumen/RPJMDes Munggung.pdf" download>RPJMDes Munggung</a>
+                <a href="assets/dokumen/LKPPD Munggung.pdf" download>LKPPD Munggung</a>
+            </div>
+        </div>
+
+        <a href="kontak.html">Kontak</a>
+    </nav>
+
+    <div class="header-right">
+        <span id="live-clock">Memuat Waktu...</span>
+        <div class="user-pill" id="user-pill" onclick="doLogout()">
+            <span id="user-icon">👤</span>
+            <span id="user-name">Memuat...</span>
+            <span style="opacity:0.6;margin-left:2px;">⏏</span>
+        </div>
+    </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+    <div class="hero-content">
+        <h1>Sistem Informasi Pertanahan</h1>
+
+        <!-- Running Text -->
+        <div class="running-text">
+            <span>Desa Munggung, Kecamatan Karangdowo, Kabupaten Klaten</span>
+        </div>
+
+        <p>Satu Data, Satu Peta, Munggung Tertata</p>
+
+        <a href="peta2.html">
+            <button class="btn-map">
+                Kunjungi Peta Interaktif
+                <span class="plane-icon">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2A1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1l3.5 1v-1.5L13 19v-5.5z"/>
+                    </svg>
+                </span>
+            </button>
+        </a>
+
+        <!-- SCROLL INDICATOR -->
+        <div class="scroll-hint" onclick="document.querySelector('.made-with-section').scrollIntoView({behavior:'smooth'})">
+            <span class="scroll-hint-text">Selengkapnya</span>
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <div class="scroll-arrows">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLOATING PARTICLES -->
+    <div class="hero-particles" id="hero-particles"></div>
+
+    <!-- FLOATING RICE STALKS -->
+    <div class="hero-stalks">
+        <div class="stalk s1">🌾</div>
+        <div class="stalk s2">🌿</div>
+        <div class="stalk s3">🌾</div>
+        <div class="stalk s4">🌿</div>
+        <div class="stalk s5">🌾</div>
+        <div class="stalk s6">🌿</div>
+    </div>
+</div>
+
+<!-- ═══ DIVIDER KUNING ATAS ═══ -->
+<div class="section-divider-yellow"></div>
+
+<!-- ═══ STATISTIK PENGUNJUNG ═══ -->
+<section class="stats-section">
+    <div class="stats-grid">
+
+        <div class="stat-card">
+            <div class="stat-icon-wrap" style="background:rgba(99,130,255,0.15);">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
+                    <rect x="2" y="3" width="20" height="14" rx="2" stroke="#6382ff" stroke-width="1.8"/>
+                    <path d="M8 21h8M12 17v4" stroke="#6382ff" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="stat-info">
+                <div class="stat-number" id="stat-total">0</div>
+                <div class="stat-label">TOTAL PENGUNJUNG</div>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon-wrap" style="background:rgba(34,197,94,0.15);">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
+                    <circle cx="12" cy="12" r="4" fill="#22c55e"/>
+                    <circle cx="12" cy="12" r="8" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="3 2"/>
+                </svg>
+            </div>
+            <div class="stat-info">
+                <div class="stat-number" id="stat-online">
+                    <span class="online-dot"></span><span id="stat-online-num">0</span>
+                </div>
+                <div class="stat-label">SEDANG ONLINE</div>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon-wrap" style="background:rgba(251,146,60,0.15);">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
+                    <rect x="3" y="4" width="18" height="18" rx="2" stroke="#fb923c" stroke-width="1.8"/>
+                    <path d="M16 2v4M8 2v4M3 10h18" stroke="#fb923c" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="stat-info">
+                <div class="stat-number" id="stat-today">0</div>
+                <div class="stat-label">KUNJUNGAN HARI INI</div>
+            </div>
+        </div>
+
+        <div class="stat-card">
+            <div class="stat-icon-wrap" style="background:rgba(168,85,247,0.15);">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="26" height="26">
+                    <circle cx="12" cy="12" r="9" stroke="#a855f7" stroke-width="1.8"/>
+                    <path d="M12 7v5l3 3" stroke="#a855f7" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div class="stat-info">
+                <div class="stat-number" id="stat-duration">00:00</div>
+                <div class="stat-label">DURASI SESI ANDA</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══ DIVIDER KUNING BAWAH ═══ -->
+<div class="section-divider-yellow"></div>
+
+<!-- ═══ MADE WITH ❤️ BY KELOMPOK B3 ═══ -->
+<section class="made-with-section">
+    <!-- Background foto sawah -->
+    <div class="made-with-bg"></div>
+    <!-- Overlay putih transparan -->
+    <div class="made-with-overlay"></div>
+
+    <div class="made-with-content">
+
+        <div class="made-with-badge">
+            🌾 Desa Munggung · Kecamatan Karangdowo
+        </div>
+
+        <h2 class="made-with-title">
+            Made With <span class="heart">❤️</span> by Kelompok B3
+        </h2>
+
+        <p class="made-with-group">Kecamatan Karangdowo &nbsp;·&nbsp; Sistem Informasi Pertanahan</p>
+
+        <div class="made-with-divider">
+            <div class="line"></div>
+            <div class="diamond"></div>
+            <div class="diamond" style="background:#1a4d6e; border-color:#f1c40f;"></div>
+            <div class="diamond"></div>
+            <div class="line right"></div>
+        </div>
+
+        <div class="members-grid">
+
+            <div class="member-card">
+                <img src="assets/L1.png" class="member-photo" alt="Azahra">
+                <div class="member-number">1</div>
+                <div class="member-name">Azahra Rahma<br>Rimamadin (055)</div>
+            </div>
+
+            <div class="member-card">
+                <img src="assets/L2.png" class="member-photo" alt="Dyah">
+                <div class="member-number">2</div>
+                <div class="member-name">Dyah Keumala<br>Trisna (110)</div>
+            </div>
+
+            <div class="member-card">
+                <img src="assets/L3.png" class="member-photo" alt="Fisyal">
+                <div class="member-number">3</div>
+                <div class="member-name">Fisyal<br>Reyfiansyah (005)</div>
+            </div>
+
+            <div class="member-card">
+                <img src="assets/L4.png" class="member-photo" alt="Hasdepta">
+                <div class="member-number">4</div>
+                <div class="member-name">Hasdepta Aulia<br>Cyntyastati (103)</div>
+            </div>
+
+            <div class="member-card">
+                <img src="assets/L5.png" class="member-photo" alt="Kayla">
+                <div class="member-number">5</div>
+                <div class="member-name">Kayla Michelle Hariyanto<br>Putri (070)</div>
+            </div>
+
+            <div class="member-card">
+                <img src="assets/L6.png" class="member-photo" alt="Arya">
+                <div class="member-number">6</div>
+                <div class="member-name">Muhammad Arya<br>Suryawijaya (078)</div>
+            </div>
+
+            <div class="member-card">
+                <img src="assets/L7.png" class="member-photo" alt="Nashua">
+                <div class="member-number">7</div>
+                <div class="member-name">Nashua<br>Halla (048)</div>
+            </div>
+
+            <div class="member-card">
+                <img src="assets/L8.png" class="member-photo" alt="Rafian">
+                <div class="member-number">8</div>
+                <div class="member-name">Rafian<br>Basith (122)</div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══ TENTANG KAMI ═══ -->
+<section class="tentang-section">
+    <div class="tentang-content">
+
+        <div class="tentang-badge">📸 Kelompok B3</div>
+
+        <h2 class="tentang-title">Tentang Kami</h2>
+        <p class="tentang-subtitle">Sistem Informasi Pertanahan &nbsp;·&nbsp; Kecamatan Karangdowo &nbsp;·&nbsp; Universitas Diponegoro</p>
+
+        <div class="tentang-divider">
+            <div class="t-line"></div>
+            <div class="t-diamond"></div>
+            <div class="t-diamond" style="background:#1a4d6e;border-color:#f1c40f;"></div>
+            <div class="t-diamond"></div>
+            <div class="t-line right"></div>
+        </div>
+
+        <!-- Dokumentasi: 2 foto landscape -->
+        <div class="photo-group-label">🌾 Dokumentasi Kelompok B3</div>
+        <div class="foto-dokumentasi">
+            <div class="foto-item-landscape">
+                <img src="assets/Dok1.jpeg" alt="Dokumentasi 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="foto-placeholder" style="display:none;">
+                    <div class="ph-icon">🖼️</div>
+                    <div>Dokumentasi 1</div>
+                </div>
+                <div class="foto-overlay">Dokumentasi Kelompok B3 - After Praktikum</div>
+            </div>
+            <div class="foto-item-landscape">
+                <img src="assets/Dok2.jpeg" alt="Dokumentasi 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="foto-placeholder" style="display:none;">
+                    <div class="ph-icon">🖼️</div>
+                    <div>Dokumentasi 2</div>
+                </div>
+                <div class="foto-overlay">Dokumentasi Kelompok B3 - Before Praktikum</div>
+            </div>
+        </div>
+
+        <!-- Praktikum: 4 foto portrait -->
+        <div class="photo-group-label" style="margin-top:10px;">📐 Praktikum Kerangka Dasar Kadastral &amp; Topografi dan Fotogrametri</div>
+        <div class="foto-praktikum">
+            <div class="foto-item-portrait">
+                <img src="assets/Prak1.jpeg" alt="Praktikum 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="foto-placeholder" style="display:none;">
+                    <div class="ph-icon">📷</div>
+                    <div>Praktikum 1</div>
+                </div>
+                <div class="foto-overlay">Centering Alat</div>
+            </div>
+            <div class="foto-item-portrait">
+                <img src="assets/Prak2.jpeg" alt="Praktikum 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="foto-placeholder" style="display:none;">
+                    <div class="ph-icon">📷</div>
+                    <div>Praktikum 2</div>
+                </div>
+                <div class="foto-overlay">Pemegang Pole (Jalon)</div>
+            </div>
+            <div class="foto-item-portrait">
+                <img src="assets/Prak3.jpeg" alt="Praktikum 3" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="foto-placeholder" style="display:none;">
+                    <div class="ph-icon">📷</div>
+                    <div>Praktikum 3</div>
+                </div>
+                <div class="foto-overlay">Cek Hasil Pengambilan Data</div>
+            </div>
+            <div class="foto-item-portrait">
+                <img src="assets/Prak4.jpeg" alt="Praktikum 4" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                <div class="foto-placeholder" style="display:none;">
+                    <div class="ph-icon">📷</div>
+                    <div>Praktikum 4</div>
+                </div>
+                <div class="foto-overlay">Pengambilan Data oleh Juru Ukur</div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-logo-row">
+            <img src="assets/L.Undip.png" class="footer-logo-img" alt="Universitas Diponegoro">
+            <div class="footer-name">Sistem Informasi Pertanahan · Desa Munggung</div>
+            <img src="assets/L.Klaten.png" class="footer-logo-img" alt="Kabupaten Klaten">
+        </div>
+        <div class="footer-divider-line"></div>
+        <div class="footer-copy">
+            &copy; 2026 <span>Kelompok B3</span> &mdash; Kecamatan Karangdowo, Kabupaten Klaten. All rights reserved.
+        </div>
+        <div class="footer-tagline">Universitas Diponegoro &nbsp;·&nbsp; Satu Data, Satu Peta, Munggung Tertata</div>
+    </div>
+</footer>
+
+<script src="assets/js/script.js"></script>
+<script src="beranda.js"></script>
+</body>
+</html>
