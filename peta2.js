@@ -2009,12 +2009,26 @@ function _bindUploadedPopup(lyr, feat, layerName){
             // Bersihkan nama kolom: ganti _ dengan spasi, trim
             const label = k.replace(/_/g, ' ').trim();
             let val = v ?? '-';
-            const isLuas = k.toLowerCase().includes('luas') || k.toLowerCase() === 'area';
+
+            const kLower = k.toLowerCase();
+            const isLuas = kLower.includes('luas') || kLower === 'area';
+            const isPanjang = kLower.includes('panjang') || kLower.includes('length') || kLower.includes('perimeter');
+
             if(isLuas && val !== '-' && !isNaN(Number(val))){
                 const haVal = Number(val);
-                const km2 = (haVal / 100).toLocaleString('id-ID', {minimumFractionDigits:4, maximumFractionDigits:4});
-                val = `${haVal.toLocaleString('id-ID', {maximumFractionDigits:3})} Ha <span style="color:#7a90a4;font-size:10px;">(${km2} km²)</span>`;
+                const m2Val = haVal * 10000; // 1 Ha = 10.000 m²
+                const km2  = (haVal / 100).toLocaleString('id-ID', {minimumFractionDigits:4, maximumFractionDigits:4});
+                val = `${haVal.toLocaleString('id-ID', {maximumFractionDigits:3})} Ha`
+                    + ` <span style="color:#7a90a4;font-size:10px;">`
+                    + `(${m2Val.toLocaleString('id-ID', {maximumFractionDigits:2})} m² · ${km2} km²)`
+                    + `</span>`;
+            } else if(isPanjang && val !== '-' && !isNaN(Number(val))){
+                const mVal = Number(val);
+                const kmVal = (mVal / 1000).toLocaleString('id-ID', {minimumFractionDigits:3, maximumFractionDigits:3});
+                val = `${mVal.toLocaleString('id-ID', {maximumFractionDigits:2})} m`
+                    + ` <span style="color:#7a90a4;font-size:10px;">(${kmVal} km)</span>`;
             }
+
             return `<tr><td>${label}</td><td>${val}</td></tr>`;
         }).join('');
         const cleanName = _cleanLayerName(layerName);
