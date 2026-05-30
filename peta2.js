@@ -2020,7 +2020,8 @@ function _bindUploadedPopup(lyr, feat, layerName){
                 const km2  = (haVal / 100).toLocaleString('id-ID', {minimumFractionDigits:4, maximumFractionDigits:4});
                 val = `${haVal.toLocaleString('id-ID', {maximumFractionDigits:3})} Ha`
                     + ` <span style="color:#7a90a4;font-size:10px;">`
-                    + `(${m2Val.toLocaleString('id-ID', {maximumFractionDigits:2})} m² · ${km2} km²)`
+                    + `(${m2Val.toLocaleString('id-ID', {maximumFractionDigits:2})} m²)`
+                    + ` (${km2} km²)`
                     + `</span>`;
             } else if(isPanjang && val !== '-' && !isNaN(Number(val))){
                 const mVal = Number(val);
